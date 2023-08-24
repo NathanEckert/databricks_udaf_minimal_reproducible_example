@@ -2,10 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.activeviam</groupId>
-  <artifactId>databricks-example-parent</artifactId>
+  <groupId>com.activeviam.databricks.udaf</groupId>
+  <artifactId>databricks-example-udaf</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
 
   <organization>
     <name>ActiveViam</name>
@@ -13,11 +12,31 @@
   </organization>
 
   <properties>
-    <java.compileVersion>11</java.compileVersion>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <scalaMajorVersion>2.12</scalaMajorVersion>
+    <scalaVersion>2.12.15</scalaVersion>
+    <sparkVersion>3.4.1</sparkVersion>
   </properties>
 
 
-  <modules>
-    <module>databricks</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_${scalaMajorVersion}</artifactId>
+      <version>${sparkVersion}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
