@@ -12,6 +12,11 @@
     <url>http://www.activeviam.com</url>
   </organization>
 
+  <properties>
+    <java.compileVersion>11</java.compileVersion>
+  </properties>
+
+
   <modules>
     <module>databricks</module>
   </modules>
