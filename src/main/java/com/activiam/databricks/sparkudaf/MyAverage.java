@@ -1,4 +1,4 @@
-package com.activiam.databricks.udaf;
+package com.activiam.databricks.sparkudaf;
 
 import org.apache.spark.sql.Encoder;
 import org.apache.spark.sql.Encoders;

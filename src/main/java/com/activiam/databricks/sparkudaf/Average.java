@@ -5,7 +5,7 @@
  * reproduction or transfer of this material is strictly prohibited
  */
 
-package com.activiam.databricks.udaf;
+package com.activiam.databricks.sparkudaf;
 
 import java.io.Serializable;
 
