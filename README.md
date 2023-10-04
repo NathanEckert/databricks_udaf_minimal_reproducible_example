@@ -9,6 +9,8 @@ Try to follow https://docs.databricks.com/en/sql/language-manual/sql-ref-functio
   - Click on "File"/"Open DBFS file browser"
   - Click on Upload, then upload your JAR.
   - In a SQL cell, run the command `CREATE FUNCTION myAverage AS 'MyAverage' USING JAR '/dbfs/FileStore/jars/databricks_example_udaf_0_0_1_SNAPSHOT.jar';`
+    - This step is the faulty step, as this SQL command does not work for non-Hive UDAFs (this fact is undocumented)
+    - To fix it, the registration should be performed through scala on a notebook or from java code at application startup
   - In another SQL cell, run the command `SHOW USER FUNCTIONS;` to check the proper registration of you function
   - Restart the cluster.
   - Call your function: ```SELECT hive_metastore.default.mycustomaverage(TO.quantity) FROM `test_schema_debug`.`table_for_udaf` AS T0;```
